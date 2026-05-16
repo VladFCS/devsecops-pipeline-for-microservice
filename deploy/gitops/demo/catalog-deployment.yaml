@@ -27,7 +27,7 @@ spec:
           type: RuntimeDefault
       containers:
         - name: catalog-service
-          image: ghcr.io/vladfcs/devsecops-pipeline-for-microservice-catalog-service@sha256:5bcaccb8aaa49dd02b87aaed5923767ac668f94ea195f0a794b5eaeb1ea9b3eb
+          image: ghcr.io/vladfcs/devsecops-pipeline-for-microservice-catalog-service@sha256:7789aabec7d875d76f1eb6b51078d598c891a45b26e47f8a5c58ed6f256611a0
           imagePullPolicy: IfNotPresent
           env:
             - name: GRPC_PORT
