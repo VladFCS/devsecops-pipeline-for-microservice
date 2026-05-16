@@ -38,6 +38,8 @@ spec:
               value: app
             - name: POSTGRES_PASSWORD
               value: app
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
           ports:
             - name: postgres
               containerPort: 5432
@@ -70,6 +72,11 @@ spec:
           volumeMounts:
             - name: data
               mountPath: /var/lib/postgresql/data
+            - name: run
+              mountPath: /var/run/postgresql
+      volumes:
+        - name: run
+          emptyDir: {}
   volumeClaimTemplates:
     - metadata:
         name: data
