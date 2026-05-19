@@ -13,7 +13,7 @@ git switch -c demo/security-scenarios
 Встанови локальні інструменти, які використовуються в CI:
 
 ```bash
-go install github.com/gitleaks/gitleaks/v8@latest
+go install github.com/zricethezav/gitleaks/v8@latest
 go install github.com/securego/gosec/v2/cmd/gosec@latest
 go install github.com/sqlc-dev/sqlc/cmd/sqlc@v1.30.0
 ```

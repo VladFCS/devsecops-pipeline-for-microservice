@@ -38,11 +38,11 @@ jobs:
       - name: Run tests
         run: go test ./...
 
+      - name: Install golangci-lint
+        run: go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+
       - name: Run golangci-lint
-        uses: golangci/golangci-lint-action@v6
-        with:
-          version: latest
-          args: ./...
+        run: "$(go env GOPATH)/bin/golangci-lint" run ./...
 
   secrets-scan:
     name: Secrets Scan
@@ -61,7 +61,7 @@ jobs:
           cache: true
 
       - name: Install gitleaks
-        run: go install github.com/gitleaks/gitleaks/v8@latest
+        run: go install github.com/zricethezav/gitleaks/v8@latest
 
       - name: Run gitleaks
         run: |
