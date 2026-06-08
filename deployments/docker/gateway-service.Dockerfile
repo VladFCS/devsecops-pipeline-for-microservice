@@ -12,7 +12,7 @@ COPY . .
 
 RUN CGO_ENABLED=0 GOOS=${TARGETOS:-linux} GOARCH=$TARGETARCH go build -trimpath -ldflags="-s -w" -o /out/gateway-service ./cmd/gateway-service
 
-FROM gcr.io/distroless/static-debian12
+FROM debian:10-slim
 
 WORKDIR /app
 
